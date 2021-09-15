@@ -55,5 +55,7 @@ public class ServiciosPersona implements InterfasServiciosPersona {
         String nombre = consola.nextLine();
         System.out.println("Ingrese la nueva edad");
         persona.setNombre(nombre);
+
+        return persona;
     }
 }
