@@ -21,11 +21,30 @@ public class ControladorPersona {
 
     @PostMapping(value = "/guardarPersona")
     public Persona guaradarPersona(@RequestBody Persona persona){
+        if(persona!=null){
+            System.out.println("El objeto no tiene valor");
+        }
+
+
         return servicio.guardar(persona);
     }
 
+    @GetMapping(value = "/buscarPersona")
+    public Persona buscarPersona(@PathVariable int id){
+                return servicio.listarId(id);
+    }
 
 
+    @DeleteMapping(value ="/eliminarPersona")
+    public Persona eliminarPersona(@PathVariable int id){
+        return servicio.borrar(id);
+
+    }
+
+    @PutMapping(value = "/actualizarPersona")
+    public Persona actualizarPersona(@RequestBody Persona persona){
+        return servicio.actualizar(persona);
+    }
 
 
 
